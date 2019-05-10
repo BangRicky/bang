@@ -53,7 +53,7 @@
 		<!--start text-->
 		<div id="text"></div>
 		<!--end text-->
-		<audio autoplay="autoplay" loop="loop">
+		<audio autoplay="autoplay" loop="loop" controls id="song">
 			<source src="http://other.web.ra01.sycdn.kuwo.cn/resource/n1/128/87/95/1390240042.mp3" type="audio/mpeg">
 		</audio>
 
@@ -88,5 +88,18 @@
 				}
 			}
 		</script>
-	</body>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<!--一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以-->
+		<script>
+				document.getElementById('song').play();
+		document.addEventListener("WeixinJSBridgeReady", function () {
+
+		document.getElementById('song').play();
+		}, false);
+	</script>
+
+
+
+
+		</body>
 </html>
